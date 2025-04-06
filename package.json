@@ -1,0 +1,80 @@
+{
+  "name": "@sb-codex/react-form-builder",
+  "version": "0.0.1",
+  "description": "A flexible and extensible form builder for React powered by React Hook Form and Zod for schema validation. Build dynamic, type-safe forms effortlessly with minimal boilerplate.",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && tsup",
+    "clean": "rimraf dist",
+    "format:fix": "prettier --write \"{src,test}/**/*.{js,ts,tsx}\" \"docs/**/*.md\"",
+    "format:check": "prettier --check \"{src,test}/**/*.{js,ts,tsx}\" \"docs/**/*.md\"",
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
+    "test": "vitest --run --typecheck",
+    "dev": "vitest",
+    "ci": "npm run build && npm run format:check && npm run test:type && npm run test",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci",
+    "test:type": "tsc --noEmit",
+    "test:watch": "vitest --watch",
+    "prepare": "husky",
+    "test:ui": "vitest --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SB-SLIM/react-form-builder.git"
+  },
+  "keywords": [
+    "package",
+    "react",
+    "form",
+    "form-builder",
+    "react-hook-form",
+    "zod",
+    "form-validation",
+    "dynamic-forms",
+    "schema-validation",
+    "form-generator",
+    "custom-forms"
+  ],
+  "author": "slim bouchoucha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SB-SLIM/react-form-builder/issues"
+  },
+  "homepage": "https://github.com/SB-SLIM/react-form-builder#readme",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1",
+    "@eslint/js": "^9.24.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@types/node": "^22.14.0",
+    "@types/prop-types": "^15.7.14",
+    "@vitest/ui": "^3.1.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^4.3.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.6.9",
+    "eslint-plugin-perfectionist": "^4.11.0",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^16.0.0",
+    "husky": "^9.1.7",
+    "jsdom": "^26.0.0",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.0",
+    "vitest": "^3.1.1"
+  }
+}
